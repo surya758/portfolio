@@ -5,21 +5,21 @@ import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 const items = [
   {
     id: 1,
+    title: "Crypto App",
+    img: "/crypto.png",
+    desc: "A sleek and intuitive mobile app built with React Native that empowers users to stay up-to-date with the latest cryptocurrency prices and market trends. With a clean and modern user interface, this app provides real-time data visualization through interactive charts and graphs, allowing users to track their favorite digital currencies effortlessly.",
+  },
+  {
+    id: 2,
     title: "Coffee Shop App",
     img: "/coffee.png",
     desc: "The Coffee Shop App is a versatile, hybrid mobile application designed to enhance the coffee ordering experience, enabling users to effortlessly browse menus, manage their cart, view order history, and make payments through a user-friendly interface. ",
   },
   {
-    id: 2,
+    id: 3,
     title: "Movies App",
     img: "/movies.png",
     desc: "The Movies App is a mobile application designed for movie enthusiasts.  The app's core functionalities include browsing through a wide range of movies and facilitating the booking of tickets, offering a comprehensive and user-friendly platform for movie lovers.",
-  },
-  {
-    id: 3,
-    title: "Dress Selector App",
-    img: "/opa.png",
-    desc: "The Dress Selector App is a mobile application designed to help users select the perfect outfit for any occasion. It allows for community interaction, enabling users to share their outfits and receive feedback!",
   },
   {
     id: 4,
