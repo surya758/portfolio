@@ -5,32 +5,36 @@ import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 const items = [
   {
     id: 1,
+    type: 'mobile',
     title: "Crypto App",
     img: "/crypto.png",
     desc: "A sleek and intuitive mobile app built with React Native that empowers users to stay up-to-date with the latest cryptocurrency prices and market trends. With a clean and modern user interface, this app provides real-time data visualization through interactive charts and graphs, allowing users to track their favorite digital currencies effortlessly.",
   },
   {
     id: 2,
-    title: "Coffee Shop App",
-    img: "/coffee.png",
-    desc: "The Coffee Shop App is a versatile, hybrid mobile application designed to enhance the coffee ordering experience, enabling users to effortlessly browse menus, manage their cart, view order history, and make payments through a user-friendly interface. ",
-  },
-  {
-    id: 3,
+    type: 'mobile',
     title: "Movies App",
     img: "/movies.png",
     desc: "The Movies App is a mobile application designed for movie enthusiasts.  The app's core functionalities include browsing through a wide range of movies and facilitating the booking of tickets, offering a comprehensive and user-friendly platform for movie lovers.",
   },
   {
-    id: 4,
-    title: "HeadsUp",
-    img: "/headsup.png",
-    desc: `HeadsUp helps in communication with your neighbours, finding people from your neighbourhood, planning events, helping in emergencies at the last minute, getting updates about what's happening in the neighbourhood and more.`,
-    link: "https://apps.apple.com/in/app/headsup-city-connecting-locals/id1629723024"
+    id: 3,
+    type: 'mobile',
+    title: "Coffee Shop App",
+    img: "/coffee.png",
+    desc: "The Coffee Shop App is a versatile, hybrid mobile application designed to enhance the coffee ordering experience, enabling users to effortlessly browse menus, manage their cart, view order history, and make payments through a user-friendly interface. ",
   },
+  {
+    id:4,
+    type: "website",
+    title: "OptiSync",
+    img: "",
+    desc: "A SaaS Automation platform that streamlines automation between different services like Google Drive, Notion, Slack, Discord etc...",
+    link: "https://optisync.netlify.app",
+  }
 ];
 
-const Single = ({ item }) => {
+const Single = ({ item , type}) => {
   const ref = useRef();
 
   const { scrollYProgress } = useScroll({
@@ -45,7 +49,7 @@ const Single = ({ item }) => {
       <div className="container">
         <div className="wrapper">
           <div className="imageContainer" ref={ref}>
-            <img src={item.img} alt="" />
+{type === 'mobile' ? <img src={item.img} alt="" /> : <iframe src="https://optisync.netlify.app" title="OptiSync" width="100%" height="100%" className="website"></iframe>}
           </div>
           <motion.div className="textContainer" style={{y}}>
             <h2>{item.title}</h2>
@@ -84,7 +88,7 @@ const Portfolio = () => {
         <motion.div style={{ scaleX }} className="progressBar"></motion.div>
       </div>
       {items.map((item) => (
-        <Single item={item} key={item.id} />
+        <Single item={item} key={item.id} type={item.type}/>
       ))}
     </div>
   );
