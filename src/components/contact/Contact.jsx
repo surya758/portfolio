@@ -63,11 +63,7 @@ const Contact = () => {
         </motion.div>
         <motion.div className="item" variants={variants}>
           <h2>Address</h2>
-          <span>Noida, Uttar Pradesh, India</span>
-        </motion.div>
-        <motion.div className="item" variants={variants}>
-          <h2>Phone</h2>
-          <span>+91 8826995243</span>
+          <span>Uttar Pradesh, India</span>
         </motion.div>
       </motion.div>
       <div className="formContainer">
